@@ -331,3 +331,149 @@ button:has(i.bi-save):hover {
   box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25) !important;
 }
 
+/* ============================================================
+   UNIVERSAL MODERN SQUIRCLE BADGE SYSTEM (Screenshot Matched)
+   ============================================================ */
+.badge,
+.badge.rounded-pill,
+span.badge,
+span.badge.rounded-pill,
+div.badge,
+div.badge.rounded-pill,
+a.badge,
+a.badge.rounded-pill {
+  border-radius: 7px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.25px !important;
+  line-height: 1.15 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.35rem !important;
+  padding: 0.32em 0.58em !important;
+  vertical-align: middle !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06) !important;
+  text-decoration: none !important;
+}
+
+/* 1. Yellow / Warning - Exact match to top badge in screenshot */
+.badge.bg-warning,
+.badge.badge-warning,
+.badge-warning {
+  background-color: #ffc107 !important;
+  color: #212529 !important;
+  border: none !important;
+}
+.badge.bg-warning *,
+.badge.badge-warning *,
+.badge-warning * {
+  color: #212529 !important;
+}
+
+/* 2. Cyan / Info - Exact match to bottom badge in screenshot */
+.badge.bg-info,
+.badge.badge-info,
+.badge-info {
+  background-color: #0dcaf0 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+.badge.bg-info *,
+.badge.badge-info *,
+.badge-info * {
+  color: #ffffff !important;
+}
+
+/* 3. Green / Success */
+.badge.bg-success,
+.badge.badge-success,
+.badge-success {
+  background-color: #198754 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+.badge.bg-success *,
+.badge.badge-success *,
+.badge-success * {
+  color: #ffffff !important;
+}
+
+/* 4. Red / Danger */
+.badge.bg-danger,
+.badge.badge-danger,
+.badge-danger {
+  background-color: #dc3545 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+.badge.bg-danger *,
+.badge.badge-danger *,
+.badge-danger * {
+  color: #ffffff !important;
+}
+
+/* 5. Blue / Primary */
+.badge.bg-primary,
+.badge.badge-primary,
+.badge-primary {
+  background-color: #0284c7 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+.badge.bg-primary *,
+.badge.badge-primary *,
+.badge-primary * {
+  color: #ffffff !important;
+}
+
+/* 6. Slate / Secondary */
+.badge.bg-secondary,
+.badge.badge-secondary,
+.badge-secondary {
+  background-color: #64748b !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+.badge.bg-secondary *,
+.badge.badge-secondary *,
+.badge-secondary * {
+  color: #ffffff !important;
+}
+
+/* 7. Dark */
+.badge.bg-dark,
+.badge.badge-dark,
+.badge-dark {
+  background-color: #1e293b !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+.badge.bg-dark *,
+.badge.badge-dark *,
+.badge-dark * {
+  color: #ffffff !important;
+}
+
+/* 8. Light */
+.badge.bg-light,
+.badge.badge-light,
+.badge-light {
+  background-color: #f1f5f9 !important;
+  color: #1e293b !important;
+  border: 1px solid #cbd5e1 !important;
+}
+.badge.bg-light *,
+.badge.badge-light *,
+.badge-light * {
+  color: #1e293b !important;
+}
+
+/* 9. Soft / Subtle Badge Variants */
+.badge.bg-opacity-10,
+.badge.bg-opacity-25,
+.badge[class*="-subtle"] {
+  border-radius: 7px !important;
+  font-weight: 700 !important;
+}
+
+

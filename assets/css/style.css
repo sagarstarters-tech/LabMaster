@@ -1,0 +1,333 @@
+/**
+ * LabMaster - Public Medical Interface Stylesheet
+ * Modern clinical aesthetic, high-contrast typography, medical teal/cyan & deep slate
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+:root {
+  --lm-primary: #0284c7;
+  --lm-primary-dark: #0369a1;
+  --lm-primary-light: #e0f2fe;
+  --lm-secondary: #0f172a;
+  --lm-accent: #06b6d4;
+  --lm-success: #10b981;
+  --lm-warning: #f59e0b;
+  --lm-danger: #ef4444;
+  --lm-bg-light: #f8fafc;
+  --lm-border: #e2e8f0;
+  --lm-text-main: #1e293b;
+  --lm-text-muted: #64748b;
+  --lm-radius: 12px;
+  --lm-shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --lm-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --lm-shadow-lg: 0 12px 30px rgba(15, 23, 42, 0.12);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--lm-text-main);
+  background-color: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .brand-font {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  color: var(--lm-secondary);
+  letter-spacing: -0.02em;
+}
+
+/* Header & Glassmorphism Navbar */
+.top-bar {
+  background-color: var(--lm-secondary);
+  color: #94a3b8;
+  font-size: 0.85rem;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.top-bar a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.top-bar a:hover {
+  color: #ffffff;
+}
+
+.main-navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--lm-secondary) !important;
+}
+.navbar-brand i {
+  color: var(--lm-primary);
+  font-size: 1.75rem;
+}
+.nav-link {
+  font-weight: 500;
+  color: #334155 !important;
+  padding: 0.6rem 1rem !important;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+.nav-link:hover, .nav-link.active {
+  color: var(--lm-primary) !important;
+  background-color: var(--lm-primary-light);
+}
+
+/* Buttons */
+.btn-primary-lm {
+  background: linear-gradient(135deg, var(--lm-primary) 0%, var(--lm-accent) 100%);
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  padding: 0.65rem 1.4rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+  transition: all 0.25s ease;
+}
+.btn-primary-lm:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.35);
+  color: #ffffff;
+}
+
+.btn-outline-lm {
+  border: 2px solid var(--lm-primary);
+  color: var(--lm-primary);
+  background: transparent;
+  font-weight: 600;
+  padding: 0.6rem 1.3rem;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+.btn-outline-lm:hover {
+  background-color: var(--lm-primary);
+  color: #ffffff;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f8fafc 100%);
+  padding: 4.5rem 0 5rem 0;
+  overflow: hidden;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background-color: #ffffff;
+  border: 1px solid var(--lm-border);
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--lm-primary-dark);
+  box-shadow: var(--lm-shadow-sm);
+  margin-bottom: 1.25rem;
+}
+.hero-title {
+  font-size: 3rem;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+.hero-title span {
+  color: var(--lm-primary);
+  position: relative;
+}
+.hero-lead {
+  font-size: 1.15rem;
+  color: var(--lm-text-muted);
+  margin-bottom: 2rem;
+  max-width: 580px;
+}
+.hero-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow: var(--lm-shadow-lg);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Section Cards */
+.feature-card {
+  background: #ffffff;
+  border-radius: var(--lm-radius);
+  padding: 2rem;
+  border: 1px solid var(--lm-border);
+  box-shadow: var(--lm-shadow-sm);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--lm-shadow-lg);
+  border-color: #bae6fd;
+}
+.feature-icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background-color: var(--lm-primary-light);
+  color: var(--lm-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Test Cards */
+.test-card {
+  background: #ffffff;
+  border-radius: var(--lm-radius);
+  border: 1px solid var(--lm-border);
+  padding: 1.5rem;
+  transition: all 0.25s ease;
+  box-shadow: var(--lm-shadow-sm);
+}
+.test-card:hover {
+  border-color: var(--lm-primary);
+  box-shadow: var(--lm-shadow);
+}
+.test-price-tag {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--lm-primary-dark);
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  color: #ffffff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 32px;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background: #1ebd5a;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.55);
+}
+.whatsapp-tooltip {
+  position: absolute;
+  right: 70px;
+  background: #1e293b;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+/* Footer */
+.footer-main {
+  background-color: var(--lm-secondary);
+  color: #94a3b8;
+  padding: 4rem 0 2rem 0;
+  margin-top: 4rem;
+}
+.footer-title {
+  color: #ffffff;
+  font-size: 1.15rem;
+  margin-bottom: 1.25rem;
+}
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-links li {
+  margin-bottom: 0.65rem;
+}
+.footer-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover {
+  color: var(--lm-accent);
+}
+
+/* Pulse animation for critical items */
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6); }
+  70% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+.pulse-alert {
+  animation: pulseGlow 1.8s infinite;
+}
+
+@media (max-width: 991px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* ==========================================================================
+   LabMaster - Action Buttons: Save & Update Styling (Emerald Green Gradient)
+   ========================================================================== */
+.btn-save,
+.btn-update,
+.btn-save-update,
+button[type="submit"]:has(i.bi-save),
+button:has(i.bi-save) {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid #047857 !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.32) !important;
+  transition: all 0.25s ease-in-out !important;
+}
+
+.btn-save:hover,
+.btn-update:hover,
+.btn-save-update:hover,
+button[type="submit"]:has(i.bi-save):hover,
+button:has(i.bi-save):hover {
+  background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
+  color: #ffffff !important;
+  border-color: #065f46 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45) !important;
+}
+
+.btn-save:active,
+.btn-update:active,
+.btn-save-update:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25) !important;
+}
+

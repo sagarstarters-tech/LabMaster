@@ -1,0 +1,635 @@
+/**
+ * LabMaster - Admin Dashboard & Clinical Management Stylesheet
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+
+:root {
+  --admin-sidebar-width: 260px;
+  --admin-topbar-height: 65px;
+  --admin-primary: #0284c7;
+  --admin-primary-dark: #0369a1;
+  --admin-primary-light: #e0f2fe;
+  --admin-sidebar-bg: #0f172a;
+  --admin-sidebar-hover: #1e293b;
+  --admin-content-bg: #f8fafc;
+  --admin-card-border: #e2e8f0;
+  --admin-text-dark: #0f172a;
+  --admin-text-muted: #64748b;
+  --admin-radius: 10px;
+}
+
+body.admin-body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--admin-content-bg);
+  color: #1e293b;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.admin-sidebar {
+  width: var(--admin-sidebar-width);
+  background-color: var(--admin-sidebar-bg);
+  color: #94a3b8;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  overflow-y: auto;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+.sidebar-brand {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  text-decoration: none;
+}
+.sidebar-brand i {
+  color: #38bdf8;
+  font-size: 1.5rem;
+}
+.sidebar-nav {
+  list-style: none;
+  padding: 1rem 0.75rem;
+  margin: 0;
+  flex: 1;
+}
+.sidebar-header {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  padding: 0.75rem 0.75rem 0.25rem 0.75rem;
+}
+.sidebar-item {
+  margin-bottom: 2px;
+}
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.65rem 0.85rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.sidebar-link i {
+  font-size: 1.15rem;
+  color: #94a3b8;
+  transition: color 0.2s;
+}
+.sidebar-link:hover {
+  color: #ffffff;
+  background-color: var(--admin-sidebar-hover);
+}
+.sidebar-link:hover i {
+  color: #38bdf8;
+}
+.sidebar-link.active {
+  color: #ffffff;
+  background: linear-gradient(90deg, #0284c7 0%, #0369a1 100%);
+  font-weight: 600;
+}
+.sidebar-link.active i {
+  color: #ffffff;
+}
+
+/* Main Content Area */
+.admin-wrapper {
+  margin-left: var(--admin-sidebar-width);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  transition: all 0.3s ease;
+}
+
+/* Topbar */
+.admin-topbar {
+  height: var(--admin-topbar-height);
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--admin-card-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.75rem;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+.topbar-search {
+  max-width: 320px;
+  position: relative;
+}
+.topbar-search input {
+  padding-left: 2.25rem;
+  border-radius: 20px;
+  border-color: var(--admin-card-border);
+  font-size: 0.85rem;
+}
+.topbar-search i {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+/* Cards & Widgets */
+.admin-content {
+  padding: 1.75rem;
+  flex: 1;
+}
+.stat-card {
+  background: #ffffff;
+  border-radius: var(--admin-radius);
+  border: 1px solid var(--admin-card-border);
+  padding: 1.35rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+  cursor: pointer;
+}
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.metric-card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+}
+.metric-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+  border-color: #94a3b8 !important;
+}
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.stat-val {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--admin-text-dark);
+  margin-bottom: 2px;
+}
+.stat-label {
+  font-size: 0.82rem;
+  color: var(--admin-text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.admin-card {
+  background: #ffffff;
+  border-radius: var(--admin-radius);
+  border: 1px solid var(--admin-card-border);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  margin-bottom: 1.5rem;
+}
+.admin-card-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--admin-card-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-top-left-radius: var(--admin-radius);
+  border-top-right-radius: var(--admin-radius);
+}
+.admin-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--admin-text-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.admin-card-body {
+  padding: 1.25rem;
+}
+
+/* Custom Pathology Result Entry Grid */
+.table-result-entry th {
+  background-color: #f1f5f9;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  color: #475569;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+.table-result-entry td {
+  vertical-align: middle;
+}
+.result-input {
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 0.35rem 0.65rem;
+}
+.result-input.is-abnormal {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+  color: #b91c1c;
+}
+.result-input.is-normal {
+  border-color: #10b981;
+}
+
+/* Status Badges */
+.badge-status {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+/* Clean Clinical Report Print Sheet */
+@media print {
+  body.admin-body {
+    background-color: #ffffff !important;
+  }
+  .admin-sidebar, .admin-topbar, .no-print, .btn, .alert {
+    display: none !important;
+  }
+  .admin-wrapper {
+    margin-left: 0 !important;
+    padding: 0 !important;
+  }
+  .admin-content {
+    padding: 0 !important;
+  }
+  .admin-card {
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .print-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .admin-sidebar {
+    transform: translateX(-100%);
+  }
+  .admin-sidebar.show {
+    transform: translateX(0);
+  }
+  .admin-wrapper {
+    margin-left: 0;
+  }
+}
+
+/* ==========================================================================
+   LabMaster - Action Buttons: Save & Update Styling (Emerald Green Gradient)
+   ========================================================================== */
+.btn-save,
+.btn-update,
+.btn-save-update,
+button[type="submit"]:has(i.bi-save),
+button:has(i.bi-save) {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid #047857 !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.32) !important;
+  transition: all 0.25s ease-in-out !important;
+}
+
+.btn-save:hover,
+.btn-update:hover,
+.btn-save-update:hover,
+button[type="submit"]:has(i.bi-save):hover,
+button:has(i.bi-save):hover {
+  background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
+  color: #ffffff !important;
+  border-color: #065f46 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45) !important;
+}
+
+.btn-save:active,
+.btn-update:active,
+.btn-save-update:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25) !important;
+}
+
+/* ==========================================================================
+   LabMaster - Modern Button & Interactive Action UI (Rich Colored Backgrounds)
+   ========================================================================== */
+
+/* 1. Primary Action & New Button Styling */
+.btn-primary-lm,
+.btn-primary {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid #0284c7 !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 3px 10px rgba(2, 132, 199, 0.28) !important;
+  transition: all 0.22s ease-in-out !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary-lm:hover,
+.btn-primary:hover {
+  background: linear-gradient(135deg, #0369a1 0%, #075985 100%) !important;
+  color: #ffffff !important;
+  border-color: #0369a1 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.42) !important;
+}
+
+.btn-primary-lm:active,
+.btn-primary:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.25) !important;
+}
+
+.btn-primary-lm i,
+.btn-primary i {
+  font-size: 1.05em;
+  line-height: 1;
+}
+
+.btn-primary-lm.btn-sm,
+.btn-primary.btn-sm {
+  padding: 0.38rem 0.85rem !important;
+  font-size: 0.84rem !important;
+}
+
+/* 2. Topbar Action Pill (+ New Accession) */
+.admin-topbar .btn-primary-lm {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid #0284c7 !important;
+  border-radius: 50rem !important;
+  padding: 0.42rem 1.15rem !important;
+  font-size: 0.84rem !important;
+  font-weight: 600 !important;
+  box-shadow: 0 3px 10px rgba(2, 132, 199, 0.32) !important;
+}
+
+.admin-topbar .btn-primary-lm:hover {
+  background: linear-gradient(135deg, #0369a1 0%, #075985 100%) !important;
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 5px 15px rgba(2, 132, 199, 0.45) !important;
+}
+
+/* 3. Modern Soft-Tinted Colored Backgrounds for Secondary & Outline Buttons */
+/* Outline Secondary -> Soft Slate Button */
+.btn-outline-secondary {
+  background-color: #f1f5f9 !important;
+  color: #334155 !important;
+  border: 1px solid #cbd5e1 !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease-in-out !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  text-decoration: none !important;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  border-color: #94a3b8 !important;
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Outline Primary -> Soft Sky Blue Button */
+.btn-outline-primary {
+  background-color: #e0f2fe !important;
+  color: #0369a1 !important;
+  border: 1px solid #7dd3fc !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease-in-out !important;
+  box-shadow: 0 1px 3px rgba(2, 132, 199, 0.08) !important;
+  text-decoration: none !important;
+}
+
+.btn-outline-primary:hover {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+  color: #ffffff !important;
+  border-color: #0284c7 !important;
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.32) !important;
+}
+
+/* Outline Success -> Soft Emerald Green Button */
+.btn-outline-success {
+  background-color: #ecfdf5 !important;
+  color: #047857 !important;
+  border: 1px solid #86efac !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease-in-out !important;
+  box-shadow: 0 1px 3px rgba(16, 185, 129, 0.08) !important;
+  text-decoration: none !important;
+}
+
+.btn-outline-success:hover {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
+  color: #ffffff !important;
+  border-color: #047857 !important;
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* Outline Danger -> Soft Crimson Red Button */
+.btn-outline-danger {
+  background-color: #fef2f2 !important;
+  color: #b91c1c !important;
+  border: 1px solid #fca5a5 !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease-in-out !important;
+  box-shadow: 0 1px 3px rgba(239, 68, 68, 0.08) !important;
+  text-decoration: none !important;
+}
+
+.btn-outline-danger:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%) !important;
+  color: #ffffff !important;
+  border-color: #dc2626 !important;
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3) !important;
+}
+
+/* Outline Warning -> Soft Amber Orange Button */
+.btn-outline-warning {
+  background-color: #fffbeb !important;
+  color: #b45309 !important;
+  border: 1px solid #fcd34d !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease-in-out !important;
+  box-shadow: 0 1px 3px rgba(245, 158, 11, 0.08) !important;
+  text-decoration: none !important;
+}
+
+.btn-outline-warning:hover {
+  background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%) !important;
+  color: #ffffff !important;
+  border-color: #d97706 !important;
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3) !important;
+}
+
+/* Outline Info -> Soft Cyan / Teal Button */
+.btn-outline-info {
+  background-color: #ecfeff !important;
+  color: #0e7490 !important;
+  border: 1px solid #67e8f9 !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease-in-out !important;
+  box-shadow: 0 1px 3px rgba(6, 182, 212, 0.08) !important;
+  text-decoration: none !important;
+}
+
+.btn-outline-info:hover {
+  background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%) !important;
+  color: #ffffff !important;
+  border-color: #0891b2 !important;
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3) !important;
+}
+
+/* 4. Table Actions & Light Button Refinement */
+.btn-light {
+  background-color: #f8fafc !important;
+  color: #334155 !important;
+  border: 1px solid #e2e8f0 !important;
+  font-weight: 500 !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.btn-light:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* 5. Filter Pills & Category Filter Bars */
+.d-flex.flex-wrap.gap-2.mb-3 > .btn,
+.gap-2 > .btn-sm {
+  border-radius: 8px !important;
+  padding: 0.4rem 0.95rem !important;
+  font-size: 0.83rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+
+/* Active Filter Pill with Success (Stock In / Approved / Active Good Batches) */
+.btn-success {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid #047857 !important;
+  box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3) !important;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
+  box-shadow: 0 5px 14px rgba(16, 185, 129, 0.4) !important;
+  transform: translateY(-1.5px) !important;
+}
+
+/* Active Filter Pill with Warning (Near Expiry / Drafts) */
+.btn-warning {
+  background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid #b45309 !important;
+  box-shadow: 0 3px 10px rgba(245, 158, 11, 0.3) !important;
+}
+
+.btn-warning:hover {
+  background: linear-gradient(135deg, #b45309 0%, #d97706 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 5px 14px rgba(245, 158, 11, 0.4) !important;
+  transform: translateY(-1.5px) !important;
+}
+
+/* Active Filter Pill with Danger (Expired / Cancelled / Pending Approval) */
+.btn-danger {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid #b91c1c !important;
+  box-shadow: 0 3px 10px rgba(239, 68, 68, 0.3) !important;
+}
+
+.btn-danger:hover {
+  background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%) !important;
+  box-shadow: 0 5px 14px rgba(239, 68, 68, 0.4) !important;
+  transform: translateY(-1.5px) !important;
+}
+
+/* Active Filter Pill with Info (Test Consumption / Amended) */
+.btn-info {
+  background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid #0e7490 !important;
+  box-shadow: 0 3px 10px rgba(6, 182, 212, 0.3) !important;
+}
+
+.btn-info:hover {
+  background: linear-gradient(135deg, #0e7490 0%, #0891b2 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 5px 14px rgba(6, 182, 212, 0.4) !important;
+  transform: translateY(-1.5px) !important;
+}
+
+/* 6. Compact Icon-Only Action Buttons */
+.btn-action-icon {
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 8px !important;
+  font-size: 0.92rem !important;
+  line-height: 1 !important;
+  flex-shrink: 0 !important;
+}
+
+.btn-action-icon i {
+  line-height: 1 !important;
+  pointer-events: none !important;
+}

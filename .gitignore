@@ -1,0 +1,27 @@
+# LabMaster Git Ignore Rules
+
+# Temporary scratch and debug scripts
+scratch/
+*.tmp
+*.bak
+
+# Storage logs and caches
+storage/logs/*.log
+storage/logs/error.log
+error_log
+php_errors.log
+
+# Operating System files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# IDE and Editor workspace directories
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Optional local database overrides (keeps production credentials safe)
+config/database.local.php
+.env
